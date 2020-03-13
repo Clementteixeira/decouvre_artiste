@@ -1,0 +1,15 @@
+@font-face {
+  font-family: 'Mabry Pro';
+  src: url("../fonts/MabryPro-Regular.ttf") format("ttf");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Mabry Pro Bold';
+  src: url("../fonts/MabryPro-Bold.ttf") format("ttf");
+  font-weight: bold;
+}
+
+
+$font-main: 'Mabry Pro', sans-serif;
+$font-title: 'Mabry Pro Bold', sans-serif;

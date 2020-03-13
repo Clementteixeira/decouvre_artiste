@@ -1,0 +1,17 @@
+body {
+  font-family: $font-main;
+  background-color: $color-main;
+  position: relative;
+  height: 100vh;
+  color : $color-font;
+
+  h1{
+  	color : $artist-color;
+  	font-size: 70px;
+  	font-family: $font-title;
+  }
+}
+
+.hideId{
+  display: none;
+}
