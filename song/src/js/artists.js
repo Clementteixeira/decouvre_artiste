@@ -29,10 +29,19 @@ function remove(artist_id){
 }
 
 	$('.test').click(function() {
-	  var artist_id = $(this).attr('data-id');
+    var artist_id = generate();
+	  //var artist_id = $(this).attr('data-id');
+    //var artist_id = document.getElementById("hideId").innerHTML;
+
+    var div = document.createElement("div");
+    div.src = artist_id;
+    console.log("ceci est l'id "+div.src+"");
+    var src = document.getElementById("hideId");
+    src.append(artist_id);
+
+
 	  console.log(artist_id);
 	  remove(artist_id);
-	  artist_id = generate();
 	  getArtist(artist_id)
 	});
 
@@ -43,7 +52,7 @@ function remove(artist_id){
 
 	function generate(){
         let id = Math.floor(Math.random()*100);
-        
+
         return id;
     }
 
@@ -54,4 +63,3 @@ function remove(artist_id){
         //         $('.js-response').append( <div class="artisteResponse"><div class="main"><img src="${artiste.picture_medium}"> <div><p class="name">${artiste.name}</p> <p class="type">${artiste.type}</p></div></div> <p class="nbFan">${artiste.nb_fan} fans</p></div> );
         //     }
         // });
-   

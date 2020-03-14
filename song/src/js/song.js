@@ -22,21 +22,33 @@ function remove(artist_id){
      $('.song2 .js-title').empty();
      $('.song3 .js-title').empty();
      $('.song4 .js-title').empty();
+     $('.hideId').empty();
 }
 
 $('.test').click(function() {
-      var artist_id = $(this).attr('data-id');
-      console.log(artist_id);
-      remove(artist_id);
-      artist_id = generate();
+    //artist_id = generate();
 
-        var div = document.createElement("div");
-        div.src = artist_id;
-        console.log("ceci est l'id "+div.src+"");
-        var src = document.getElementById("hideId");
-        src.append(div);
+    // var div = document.createElement("div");
+    // div.src = artist_id;
+    // console.log("ceci est l'id "+div.src+"");
+    // var src = document.getElementById("hideId");
+    // src.append(artist_id);
 
-      console.log(artist_id);
+    // var artist_id = $(this).attr('data-id');
+    var artist_id = document.getElementById("hideId").innerHTML;
+    console.log(artist_id);
+    remove(artist_id);
+
+
+
+      //var test = document.getElementById("hideId").innerHTML.value;
+      //console.log("song "+test+"");
+
+
+
+        //var test = document.getElementById("hideId").innerHTML;
+        //console.log("song "+test+"");
+
       getSongs(artist_id);
       if(response.data[0].title == undefined){
         artist_id = 1191615;
@@ -51,6 +63,6 @@ $('.test').click(function() {
 
     function generate(){
         let id = Math.floor(Math.random()*100);
-        
+
         return id;
     }
