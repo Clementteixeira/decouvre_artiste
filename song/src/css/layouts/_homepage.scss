@@ -1,19 +1,38 @@
 .container {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  justify-content: space-around;
+  //align-items: center;
+  //flex-direction: column;
   height: 100%;
-  width: 90%;
+  width: 30%;
   margin: auto;
   text-align: center;
   z-index: 1;
   @extend %opacity-transition;
+
+    input{
+      background: none;
+      border:0;
+      color:$color-font;
+      font-family: 'Mabry Pro';
+      text-decoration: underline;
+      width: 40%;
+    }
+
+    ::-webkit-input-placeholder { /* Edge */
+      color: $color-font;
+      font-family: 'Mabry Pro';
+      text-decoration: underline;
+      font-size: 20px;
 }
 
-body {
+}
+
+
+.nav{
+  width: 100%;
+  padding:30px;
+  background-color: $search;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  justify-content: space-around;
 }

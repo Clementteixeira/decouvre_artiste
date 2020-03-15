@@ -8,6 +8,11 @@ function searchArtist(search){
           type: 'GET',
           data: { "search": search },
       }).done(function(response) {
+        console.log(response);
+        for (var i = 0; i < 10; i++) {
+          console.log(response.data[i].name)
+  // do something
+}
        //console.log(response);
 });
 }
@@ -18,10 +23,36 @@ function searchArtist(search){
   var button = document.getElementById('submit');
 
   $(button).click(function() {
-    searchArtist();
 
   input = document.getElementById('research').value;
   var search = input;
 
   console.log(search);
+    searchArtist(search);
+    remove();
+    searchResponse(response);
 });
+
+function remove(){
+  $('.js-name').empty();
+    $('.js-fan').empty();
+    $('.js-artist-pic').empty();
+    $('.song1 .js-title').empty();
+    $('.song1 #cover1').empty();
+    $('.song2 .js-title').empty();
+    $('.song2 #cover2').empty();
+    $('.song3 .js-title').empty();
+    $('.song3 #cover3').empty();
+    $('.song4 .js-title').empty();
+    $('.song4 #cover4').empty();
+    $('.hideId').empty();
+    $('.song1 #track1 source').empty();
+}
+
+function searchResponse(response){
+    response.forEach((item, i) => {
+      console.log(response.data[i].name);
+
+    });
+
+}

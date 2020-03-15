@@ -12,7 +12,7 @@ if (empty($_GET['search'])) {
       }
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "https://api.deezer.com/search?q=".$_GET['search']."",
+  CURLOPT_URL => "https://api.deezer.com/search/artist?q=".$_GET['search']."/",
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => "",
   CURLOPT_MAXREDIRS => 10,

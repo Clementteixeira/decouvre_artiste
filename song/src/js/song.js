@@ -9,9 +9,49 @@ $.ajax({
     }).done(function(response) {
      console.log(response.data[0].title);
       $('.song1 .js-title').append(response.data[0].title);
+      var img = document.createElement("img");
+    	img.src = response.data[0].album.cover_medium;
+    	var src = document.getElementById("cover1");
+    	src.appendChild(img);
+
+      var audio = document.createElement("source");
+      audio.src = response.data[0].preview;
+      console.log(audio.src);
+      var src = document.getElementById("track1");
+      src.appendChild(audio);
+
       $('.song2 .js-title').append(response.data[1].title);
+      var img = document.createElement("img");
+    	img.src = response.data[1].album.cover_medium;
+    	var src = document.getElementById("cover2");
+    	src.appendChild(img);
+      var audio = document.createElement("source");
+      audio.src = response.data[1].preview;
+      console.log(audio.src);
+      var src = document.getElementById("track2");
+      src.appendChild(audio);
+
       $('.song3 .js-title').append(response.data[2].title);
+      var img = document.createElement("img");
+    	img.src = response.data[2].album.cover_medium;
+    	var src = document.getElementById("cover3");
+    	src.appendChild(img);
+      var audio = document.createElement("source");
+      audio.src = response.data[2].preview;
+      console.log(audio.src);
+      var src = document.getElementById("track3");
+      src.appendChild(audio);
+
       $('.song4 .js-title').append(response.data[3].title);
+      var img = document.createElement("img");
+    	img.src = response.data[3].album.cover_medium;
+    	var src = document.getElementById("cover4");
+    	src.appendChild(img);
+      var audio = document.createElement("source");
+      audio.src = response.data[3].preview;
+      console.log(audio.src);
+      var src = document.getElementById("track4");
+      src.appendChild(audio);
      //console.log(response);
     });
 }
@@ -19,10 +59,15 @@ $.ajax({
 
 function remove(artist_id){
      $('.song1 .js-title').empty();
+     $('.song1 #cover1').empty();
      $('.song2 .js-title').empty();
+     $('.song2 #cover2').empty();
      $('.song3 .js-title').empty();
+     $('.song3 #cover3').empty();
      $('.song4 .js-title').empty();
+     $('.song4 #cover4').empty();
      $('.hideId').empty();
+     $('.song1 #track1 source').empty();
 }
 
 $('.test').click(function() {
@@ -50,9 +95,7 @@ $('.test').click(function() {
         //console.log("song "+test+"");
 
       getSongs(artist_id);
-      if(response.data[0].title == undefined){
-        artist_id = 1191615;
-      }
+
     });
 
     $(document).ready(function() {

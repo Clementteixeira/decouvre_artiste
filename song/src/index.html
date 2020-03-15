@@ -5,35 +5,64 @@
     <title>Artist Discover</title>
 </head>
 <body>
+
+  </div>
+  <div class="nav">
+
 <div class="container js-container" data-id="4050205">
 	<input type="search" id="research" placeholder="cherche un artiste">
-  <button id="submit" class="submit">cherche</button>
-    <div class="artist js-artist" id="artist">
+  <button id="submit" class="submit"><img src="img/search.png"></button>
+  <div class ="test"  id="test"><img src="img/change.png"></div>
 
-    </div>
+</div>
+</div>
+<div class="wrap">
+
+
+    <div class="artist js-artist">
+      <div id="artist" class="js-artist-pic">
+
+      </div>
+
+
     <h1 class="name js-name"></h1>
-    <h2 class="fan js-fan"></h2>
-    <h2> fans </h2>
+    <div class="flex">
+      <h2 class="fan js-fan"></h2>
+      <h2> fans </h2>
+    </div>
+    </div>
     <div class="songs js-songs">
 		<div class="song1">
-			<img src="img/play-button.png">
+      <div id="cover1"></div>
 			<p class="title js-title"></p>
+      <audio controls id="track1">
+
+      </audio>
 		</div>
 		<div class="song2">
-			<img src="img/play-button.png">
+			<div id="cover2"></div>
 			<p class="title js-title"></p>
+      <audio controls id="track2">
+
+      </audio>
 		</div>
 		<div class="song3">
-			<img src="img/play-button.png">
+			<div id="cover3"></div>
 			<p class="title js-title"></p>
+      <audio controls id="track3">
+
+      </audio>
 		</div>
 		<div class="song4">
-			<img src="img/play-button.png">
+			<div id="cover4"></div>
 			<p class="title js-title"></p>
+      <audio controls id="track4">
+
+      </audio>
 		</div>
 	</div>
+  </div>
 
-	<div class ="test"  id="test" style="background-color: blue; cursor: pointer;">random</div>
 
 	<div class="hideId" id="hideId"></div>
 </div>

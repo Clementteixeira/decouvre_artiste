@@ -4,14 +4,45 @@ body {
   position: relative;
   height: 100vh;
   color : $color-font;
+  overflow-x: hidden;
 
   h1{
-  	color : $artist-color;
   	font-size: 70px;
   	font-family: $font-title;
+  }
+
+  button{
+    background: none;
+    border: 0;
+    cursor: pointer;
   }
 }
 
 .hideId{
   display: none;
+}
+
+.wrap{
+  display: flex;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  justify-content: space-around;
+  position: relative;
+  padding-top:8%;
+
+    .songs{
+      display: flex;
+      //flex-direction: column;
+	     align-items: center;
+       justify-content: space-around;
+       width: 65%;
+    }
+
+    .flex{
+      display: flex;
+      text-align: center;
+      justify-content: center;
+    }
 }

@@ -18,6 +18,8 @@ $.ajax({
 	img.src = response.picture_big;
 	var src = document.getElementById("artist");
 	src.appendChild(img);
+
+
  });
 }
 
@@ -25,7 +27,7 @@ $.ajax({
 function remove(artist_id){
 	$('.js-name').empty();
     $('.js-fan').empty();
-    $('.js-artist').empty();
+    $('.js-artist-pic').empty();
 }
 
 	$('.test').click(function() {
