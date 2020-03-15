@@ -30,7 +30,6 @@ function searchArtist(search){
   console.log(search);
     searchArtist(search);
     remove();
-    searchResponse(response);
 });
 
 function remove(){
@@ -47,12 +46,4 @@ function remove(){
     $('.song4 #cover4').empty();
     $('.hideId').empty();
     $('.song1 #track1 source').empty();
-}
-
-function searchResponse(response){
-    response.forEach((item, i) => {
-      console.log(response.data[i].name);
-
-    });
-
 }

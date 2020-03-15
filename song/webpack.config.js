@@ -64,6 +64,14 @@ config = {
                     },
                 }]
             },
+
+            {
+              test: /\.html$/,
+              loader: 'mustache-loader'
+              // loader: 'mustache-loader?minify'
+              // loader: 'mustache-loader?{ minify: { removeComments: false } }'
+              // loader: 'mustache-loader?noShortcut'
+    },
         ]
     },
 
