@@ -10,14 +10,20 @@ function getArtist(artist_id){
       }).done(function(response) {
        console.log(response);
        console.log(response.name);
-       $('.js-name').append(response.name);
-       $('.js-fan').append(response.nb_fan);
-
-     // La photo
-     var img = document.createElement("img");
-     img.src = response.picture_big;
-     var src = document.getElementById("artist");
-     src.appendChild(img);
+      $('.artist').append(`<div class="artist js-artist"><img src="${response.picture_big}"></div>
+      <h1 class="name js-name">${response.name}</h1>
+      <div class="flex">
+        <h2 class="fan js-fan">${response.nb_fan}</h2>
+        <h2> fans </h2>
+      </div>`)
+     //   $('.js-name').append(response.name);
+     //   $('.js-fan').append(response.nb_fan);
+     //
+     // // La photo
+     // var img = document.createElement("img");
+     // img.src = response.picture_big;
+     // var src = document.getElementById("artist");
+     // src.appendChild(img);
 
 
    });
@@ -25,9 +31,8 @@ function getArtist(artist_id){
 
 
     function remove(artist_id){
-     $('.js-name').empty();
-     $('.js-fan').empty();
-     $('.js-artist-pic').empty();
+     $('.artist').empty();
+
    }
 
    $('.random').click(function() {

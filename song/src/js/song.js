@@ -7,72 +7,59 @@ function getSongs(artist_id){
     type: 'GET',
     data:  { "artist_id": artist_id , }
   }).done(function(response) {
-   console.log(response.data[0].title);
-   $('.song1 .js-title').append(response.data[0].title);
-   var img = document.createElement("img");
-   img.src = response.data[0].album.cover_medium;
-   var src = document.getElementById("cover1");
-   src.appendChild(img);
+    $('.songs').append(`
+      <div class="song">
+        <div id="cover">
+        <img src="${response.data[0].album.cover_medium}"</div>
+        <p class="title js-title">${response.data[0].title}</p>
+        <div class="theTrack">
+        <audio controls id="track1">
+           <source src="${response.data[0].preview}"</source>
+        </audio>
+        </div>
+     </div>
 
+     <div class="song">
+          <div id="cover">
+            <img src="${response.data[1].album.cover_medium}"
+          </div>
+          <p class="title js-title">${response.data[1].title}</p>
+          <div class="theTrack">
+            <audio controls id="track1">
+            <source src="${response.data[1].preview}"</source>
+            </audio>
+       </div>
+    </div>
 
+    <div class="song">
+      <div id="cover">
+      <img src="${response.data[2].album.cover_medium}"</div>
+      <p class="title js-title">${response.data[2].title}</p>
+      <div class="theTrack">
+      <audio controls id="track1">
+         <source src="${response.data[2].preview}"</source>
+      </audio>
+      </div>
+   </div>
 
+   <div class="song">
+     <div id="cover">
+     <img src="${response.data[3].album.cover_medium}"</div>
+     <p class="title js-title">${response.data[3].title}</p>
+     <div class="theTrack">
+     <audio controls id="track1">
+        <source src="${response.data[3].preview}"</source>
+     </audio>
+     </div>
+  </div>`)
 
-   // var source = document.createElement("source");
-   // source.src = response.data[0].preview;
-   // console.log(source.src);
-   // var src = document.getElementById("track1");
-   // src.appendChild(source);
-
-   $('.theTrack1').append(`<audio controls id="track1">
-      <source src="${response.data[0].preview}"</source>
-   </audio>`);
-
-   $('.song2 .js-title').append(response.data[1].title);
-   var img = document.createElement("img");
-   img.src = response.data[1].album.cover_medium;
-   var src = document.getElementById("cover2");
-   src.appendChild(img);
-   var audio = document.createElement("source");
-   $('.theTrack2').append(`<audio controls id="track1">
-      <source src="${response.data[1].preview}"</source>
-   </audio>`);
-
-   $('.song3 .js-title').append(response.data[2].title);
-   var img = document.createElement("img");
-   img.src = response.data[2].album.cover_medium;
-   var src = document.getElementById("cover3");
-   src.appendChild(img);
-   $('.theTrack3').append(`<audio controls id="track1">
-      <source src="${response.data[2].preview}"</source>
-   </audio>`);
-
-   $('.song4 .js-title').append(response.data[3].title);
-   var img = document.createElement("img");
-   img.src = response.data[3].album.cover_medium;
-   var src = document.getElementById("cover4");
-   src.appendChild(img);
-   $('.theTrack4').append(`<audio controls id="track1">
-      <source src="${response.data[3].preview}"</source>
-   </audio>`);
-     //console.log(response);
    });
 }
 
 
 function remove(artist_id){
- $('.song1 .js-title').empty();
- $('.song1 #cover1').empty();
- $('.song2 .js-title').empty();
- $('.song2 #cover2').empty();
- $('.song3 .js-title').empty();
- $('.song3 #cover3').empty();
- $('.song4 .js-title').empty();
- $('.song4 #cover4').empty();
- $('.hideId').empty();
- $('.theTrack1').empty();
- $('.theTrack2').empty();
- $('.theTrack3').empty();
- $('.theTrack4').empty();
+ $('.songs').empty();
+
 }
 
 $('.random').click(function() {
