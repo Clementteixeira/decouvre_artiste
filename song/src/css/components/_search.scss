@@ -1,0 +1,51 @@
+.wrap-search{
+  width: 80%;
+  justify-content: center;
+  margin-right: auto;
+  margin-left: auto;
+  //display: flex;
+  position: relative;
+
+    .artistBloc{
+      display: flex;
+      align-items: center;
+      width: 90%;
+      background-color: $search;
+      margin-bottom: 30px;
+      margin-top: 30px;
+      cursor: pointer;
+
+
+
+        h2{
+          font-size: 40px;
+        }
+
+        img{
+          display: block;
+          width: 30%;
+        }
+
+        div{
+          width: 33%;
+          display: block;
+        }
+
+        div:nth-child(1){
+          margin-left: 60px;
+        }
+
+        div:nth-child(2){
+        text-align: center;
+        }
+
+        div:nth-child(3){
+          display: flex;
+          justify-content: flex-end;
+        }
+    }
+}
+
+.wrap-search.active{
+  display: none;
+}

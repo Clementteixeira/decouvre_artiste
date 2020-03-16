@@ -14,11 +14,12 @@ $.ajax({
     	var src = document.getElementById("cover1");
     	src.appendChild(img);
 
-      var audio = document.createElement("source");
-      audio.src = response.data[0].preview;
-      console.log(audio.src);
+
+      var source = document.createElement("source");
+      source.src = response.data[0].preview;
+      console.log(source.src);
       var src = document.getElementById("track1");
-      src.appendChild(audio);
+      src.appendChild(source);
 
       $('.song2 .js-title').append(response.data[1].title);
       var img = document.createElement("img");
@@ -67,7 +68,7 @@ function remove(artist_id){
      $('.song4 .js-title').empty();
      $('.song4 #cover4').empty();
      $('.hideId').empty();
-     $('.song1 #track1 source').empty();
+     $('.song1 audio').empty();
 }
 
 $('.test').click(function() {
@@ -96,6 +97,13 @@ $('.test').click(function() {
 
       getSongs(artist_id);
 
+    });
+
+    $('body').on('click','.artistBloc', function() {
+      var artist_id = $('.artistBloc').attr('data-id');
+      console.log(artist_id);
+      remove(artist_id);
+      getSongs(artist_id)
     });
 
     $(document).ready(function() {

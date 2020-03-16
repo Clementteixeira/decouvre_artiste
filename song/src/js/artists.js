@@ -52,16 +52,17 @@ function remove(artist_id){
 	  getArtist(artist_id);
 	});
 
+  $('body').on('click','.artistBloc', function() {
+	  var artist_id = $('.artistBloc').attr('data-id');
+    console.log(artist_id);
+    $('.wrap-search').toggleClass("active");
+    $('.wrap').toggleClass("active");
+    remove(artist_id);
+	  getArtist(artist_id)
+	});
+
 	function generate(){
         let id = Math.floor(Math.random()*100);
 
         return id;
     }
-
-
-        // this.table.forEach( function (artiste)  {
-        //     console.log(artiste.nb_fan);
-        //     if (artiste.nb_fan >= 1000) {
-        //         $('.js-response').append( <div class="artisteResponse"><div class="main"><img src="${artiste.picture_medium}"> <div><p class="name">${artiste.name}</p> <p class="type">${artiste.type}</p></div></div> <p class="nbFan">${artiste.nb_fan} fans</p></div> );
-        //     }
-        // });

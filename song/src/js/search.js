@@ -8,15 +8,31 @@ function searchArtist(search){
           type: 'GET',
           data: { "search": search },
       }).done(function(response) {
-        console.log(response);
-        for (var i = 0; i < 10; i++) {
-          console.log(response.data[i].name)
-  // do something
-}
-       //console.log(response);
+        this.table = response.data;
+        $('.wrap-search active').html( `` );
+        this.table.forEach(function(search){
+          //$('.wrap-search').append(`<div class="bloc"><h1>${search.nb_fan}</h1></div>`)
+          //console.log(search.id);
+          $('.wrap-search').append(`
+
+          <div class="artistBloc" data-id="${search.id}">
+            <div>
+              <h3>${search.type}</h3>
+            </div>
+            <div>
+              <h2>${search.name}</h2>
+            </div>
+            <div>
+              <img src="${search.picture_medium}">
+            </div>
+
+          </div>
+          </div>`)
+
+        });
+
 });
 }
-
 
 
   var input;
@@ -28,8 +44,12 @@ function searchArtist(search){
   var search = input;
 
   console.log(search);
+  $('.wrap-search').empty();
+  $('.wrap').toggleClass("active");
+	$('.wrap-search').toggleClass("active");
     searchArtist(search);
-    remove();
+    //remove();
+    searchResponse(response);
 });
 
 function remove(){
@@ -46,4 +66,12 @@ function remove(){
     $('.song4 #cover4').empty();
     $('.hideId').empty();
     $('.song1 #track1 source').empty();
+}
+
+function searchResponse(response){
+    response.forEach((item, i) => {
+      console.log(response.data[i].name);
+
+    });
+
 }
