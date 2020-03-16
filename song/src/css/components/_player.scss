@@ -2,3 +2,17 @@ audio{
   width: 250px;
   color: #F2F2F2;
 }
+
+audio::-webkit-media-controls-panel{
+  background-color: $search;
+  border: 0;
+  border-radius: 0;
+}
+
+audio::-webkit-media-controls-current-time-display,audio::-webkit-media-controls-time-remaining-display{
+  color: white;
+}
+
+audio::-webkit-media-controls-play-button{
+  color: blue;
+}

@@ -44,6 +44,10 @@ body {
       display: flex;
       text-align: center;
       justify-content: center;
+
+      h2:first-of-type{
+        margin-right: 4px;
+      }
     }
 }
 

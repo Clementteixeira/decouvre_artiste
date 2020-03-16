@@ -30,7 +30,7 @@ function getArtist(artist_id){
      $('.js-artist-pic').empty();
    }
 
-   $('.test').click(function() {
+   $('.random').click(function() {
     var artist_id = generate();
 	  //var artist_id = $(this).attr('data-id');
     //var artist_id = document.getElementById("hideId").innerHTML;
@@ -61,8 +61,8 @@ function getArtist(artist_id){
      getArtist(artist_id)
    });
 
-   function generate(){
-    let id = Math.floor(Math.random()*100);
+   function generate(response){
+    let id = Math.floor(Math.random()*2000);
 
     return id;
   }

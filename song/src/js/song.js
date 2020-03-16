@@ -75,7 +75,7 @@ function remove(artist_id){
  $('.theTrack4').empty();
 }
 
-$('.test').click(function() {
+$('.random').click(function() {
     //artist_id = generate();
 
     // var div = document.createElement("div");
