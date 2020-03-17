@@ -7,17 +7,19 @@ function getSongs(artist_id){
     type: 'GET',
     data:  { "artist_id": artist_id , }
   }).done(function(response) {
+      console.log(response);
     $('.songs').append(`
       <div class="song">
         <div id="cover">
-        <img src="${response.data[0].album.cover_medium}"</div>
+          <img src="${response.data[0].album.cover_medium}"
+        </div>
         <p class="title js-title">${response.data[0].title}</p>
         <div class="theTrack">
-        <audio controls id="track1">
-           <source src="${response.data[0].preview}"</source>
-        </audio>
+          <audio controls id="track1">
+            <source src="${response.data[0].preview}"</source>
+           </audio>
         </div>
-     </div>
+      </div>
 
      <div class="song">
           <div id="cover">
@@ -51,7 +53,8 @@ function getSongs(artist_id){
         <source src="${response.data[3].preview}"</source>
      </audio>
      </div>
-  </div>`)
+  </div>`);
+
 
    });
 }
@@ -59,6 +62,7 @@ function getSongs(artist_id){
 
 function remove(artist_id){
  $('.songs').empty();
+  $('.hideId').empty();
 
 }
 
@@ -91,7 +95,7 @@ $('.random').click(function() {
       });
 
 $('body').on('click','.artistBloc', function() {
-  var artist_id = $('.artistBloc').attr('data-id');
+  var artist_id = $(this).attr('data-id');
   console.log(artist_id);
   remove(artist_id);
   getSongs(artist_id)
